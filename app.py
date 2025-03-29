@@ -36,7 +36,7 @@ st.markdown("""
 st.markdown('<div class="main-container">', unsafe_allow_html=True)
 st.title("🚀 Get a SEO-Friendly Slug Using AI & Rank on Top")
 
-st.image("https://www.easywp.com/wp-content/uploads/2023/09/EasyWP-7-seo-factors-slug-1-cover-1.png", use_column_width=True)
+st.image("https://www.easywp.com/wp-content/uploads/2023/09/EasyWP-7-seo-factors-slug-1-cover-1.png", use_container_width=True)
 
 # Input
 text_input = st.text_input("Enter Your Title (Any Language):")
@@ -56,7 +56,7 @@ st.write("""
 - A well-optimized slug **reduces bounce rates by 12%**.
 - **Short & keyword-rich slugs** increase CTR by **30% on average**.
 """)
-st.image("https://www.elegantthemes.com/blog/wp-content/uploads/2015/01/WordPress-Slugs-Featured-Image.png", use_column_width=True)
+st.image("https://www.elegantthemes.com/blog/wp-content/uploads/2015/01/WordPress-Slugs-Featured-Image.png", use_container_width=True)
 st.markdown('</div>', unsafe_allow_html=True)
 
 st.markdown('<div class="footer">', unsafe_allow_html=True)
