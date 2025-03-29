@@ -22,14 +22,20 @@ st.set_page_config(page_title="RankSlugAI - AI SEO Slug Generator", page_icon="�
 
 st.markdown("""
     <style>
-        body {background-color: #f9f9f9;}
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap');
+
+        body {background-color: #f9f9f9; font-family: 'Merriweather', serif;}
         .main-container {max-width: 700px; margin: auto; padding: 40px; background: white; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0,0,0,0.1);}
-        h1 {color: #1a73e8; text-align: center; font-size: 32px; font-weight: bold;}
+        h1 {color: #1a73e8; text-align: center; font-size: 32px; font-weight: bold; font-family: 'Merriweather', serif;}
+        .stTextInput input {font-family: 'Mukta', sans-serif; font-size: 16px;}
         .stButton>button {background-color: #1a73e8; color: white; border-radius: 5px; padding: 12px 24px; font-size: 18px; font-weight: bold; width: 100%;}
         .stButton>button:hover {background-color: #0f5bbd;}
-        .slug-box {background-color: #e8f0fe; padding: 15px; border-radius: 5px; font-size: 18px; font-weight: bold; text-align: center; color: #1a73e8;}
-        .insights {background: #eef5ff; padding: 20px; border-radius: 10px; margin-top: 30px;}
-        .footer {text-align: center; margin-top: 40px; color: #666; font-size: 14px;}
+        .slug-box {background-color: #e8f0fe; padding: 15px; border-radius: 5px; font-size: 18px; font-weight: bold; text-align: center; color: #1a73e8; font-family: 'Merriweather', serif;}
+        .copy-btn {background-color: #34a853; color: white; border-radius: 5px; padding: 10px 20px; font-size: 16px; width: 100%; border: none; cursor: pointer; font-family: 'Merriweather', serif;}
+        .copy-btn:hover {background-color: #2e8b47;}
+        .insights {background: #eef5ff; padding: 20px; border-radius: 10px; margin-top: 30px; font-family: 'Merriweather', serif;}
+        .footer {text-align: center; margin-top: 40px; color: #666; font-size: 14px; font-family: 'Merriweather', serif;}
     </style>
 """, unsafe_allow_html=True)
 
@@ -45,6 +51,10 @@ if st.button("Generate SEO Slug"):
     if text_input:
         slug = generate_slug(text_input)
         st.markdown(f'<div class="slug-box">✅ SEO Slug: `{slug}`</div>', unsafe_allow_html=True)
+        
+        # Copy to clipboard button
+        st.code(f"{slug}", language="bash")  # Display the slug in a code box
+        st.markdown(f'<button class="copy-btn" onclick="navigator.clipboard.writeText(\'{slug}\')">📋 Copy to Clipboard</button>', unsafe_allow_html=True)
     else:
         st.warning("⚠ Please enter a title.")
 
