@@ -2,7 +2,6 @@ import streamlit as st
 import re
 from deep_translator import GoogleTranslator
 from unidecode import unidecode
-import pyperclip  # To handle clipboard copying
 
 # Function to generate SEO-friendly slugs
 def generate_slug(text, target_lang="en"):
@@ -51,12 +50,19 @@ text_input = st.text_input("Enter Your Title (Any Language):")
 if st.button("Generate SEO Slug"):
     if text_input:
         slug = generate_slug(text_input)
-        st.markdown(f'<div class="slug-box">✅ SEO Slug: `{slug}`</div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="slug-box" id="slug">{slug}</div>', unsafe_allow_html=True)
 
-        # Copy to clipboard button
-        if st.button("📋 Copy to Clipboard"):
-            pyperclip.copy(slug)  # Copies slug to clipboard
-            st.toast("✅ You have copied the slug! Now go rank your site! 🚀", icon="🎉")
+        # Copy to clipboard button (Using JavaScript)
+        copy_script = f"""
+        <script>
+        function copyToClipboard() {{
+            navigator.clipboard.writeText("{slug}");
+            alert("✅ You have copied the slug! Now go rank your site! 🚀");
+        }}
+        </script>
+        <button class="copy-btn" onclick="copyToClipboard()">📋 Copy to Clipboard</button>
+        """
+        st.markdown(copy_script, unsafe_allow_html=True)
     else:
         st.warning("⚠ Please enter a title.")
 
