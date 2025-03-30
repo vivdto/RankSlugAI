@@ -27,7 +27,7 @@ st.markdown("""
 
         body {background-color: #f9f9f9; font-family: 'Merriweather', serif;}
         .main-container {max-width: 700px; margin: auto; padding: 40px; background: white; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0,0,0,0.1);}
-        h1 {color: #1a73e8; text-align: center; font-size: 36px; font-weight: bold; font-family: 'Merriweather', serif;}
+        h1 {color: #1a73e8; text-align: center; font-size: 36px; font-weight: bold; font-family: 'Merriweather', serif; margin-bottom: 20px;}
         .stTextInput input {font-family: 'Mukta', sans-serif; font-size: 16px;}
         .stButton>button {background-color: #1a73e8; color: white; border-radius: 8px; padding: 12px 24px; font-size: 18px; font-weight: bold; width: 100%; transition: 0.3s;}
         .stButton>button:hover {background-color: #0f5bbd; transform: scale(1.05);}
@@ -39,12 +39,14 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.markdown('<div class="main-container">', unsafe_allow_html=True)
-st.title("🚀 Get a SEO-Friendly Slug Using AI & Rank on Top")
+# Main Container
+# st.markdown('<div class="main-container">', unsafe_allow_html=True)
+st.title("🚀 RankSlugAI — Slug Using AI")
 
+# Image (Centered Properly)
 st.image("https://www.easywp.com/wp-content/uploads/2023/09/EasyWP-7-seo-factors-slug-1-cover-1.png", use_container_width=True)
 
-# Input
+# Input Box
 text_input = st.text_input("Enter Your Title (Any Language):")
 
 if st.button("Generate SEO Slug"):
@@ -66,7 +68,8 @@ if st.button("Generate SEO Slug"):
     else:
         st.warning("⚠ Please enter a title.")
 
-st.markdown('<div class="insights">', unsafe_allow_html=True)
+# Insights Section (No Blank Space)
+# st.markdown('<div class="insights">', unsafe_allow_html=True)
 st.subheader("📈 How Slug Optimization Boosts SEO Performance")
 st.write("""
 - **40% of users** click on URLs with clear and readable slugs.
@@ -77,6 +80,8 @@ st.write("""
 st.image("https://www.elegantthemes.com/blog/wp-content/uploads/2015/01/WordPress-Slugs-Featured-Image.png", use_container_width=True)
 st.markdown('</div>', unsafe_allow_html=True)
 
+# Footer (No Extra Space)
 st.markdown('<div class="footer">', unsafe_allow_html=True)
 st.write("🔹 Made by **Vivashwat Thakur** | [Read my blogs on Medium](https://medium.com/@vivdto/)")
 st.markdown('</div>', unsafe_allow_html=True)
+st.markdown('</div>', unsafe_allow_html=True)  # Closing Main Container
